@@ -1,0 +1,28 @@
+ body{
+    margin: 0;
+    background-color: rgb(18, 37, 57);
+    
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(19, 63, 63);
+    color: rgb(242, 241, 244);
+}
+
+.select{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container{
+
+    display: flex;
+    border: 1px;
+    margin: 50px;
+
+}
+
+
