@@ -17,12 +17,20 @@
     gap: 30px;
 }
 
+.big_container{
+    display: flex;
+    justify-content: center;
+}
 .container{
 
     display: flex;
-    border: 1px;
+    border: 1px solid black;
     margin: 50px;
-
+    height: 500px;
+    width: 500px;
+}
+.square{
+    border: 1px solid #082b3a;
 }
 
 
