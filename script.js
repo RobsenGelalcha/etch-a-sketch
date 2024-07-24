@@ -4,8 +4,10 @@ let start_size = default_size;
 const container = document.querySelector(".container");
 const sizeButton = document.querySelector(".sizeButton");
 const clear = document.querySelector(".clear");
+const set = document.querySelector(".colorButton");
+const random = document.querySelector(".Randomize");
 
-let makeColor = false;
+
 
 
 function getRandomRGB(){
@@ -25,23 +27,40 @@ function createGrid(gridSize){
     for (let i = 0; i < gridSize * gridSize; i++) {
         const square = document.createElement("div");
         const size = 500/gridSize;
+        let makeColor = false;
         square.style.width = `${size}px`;
         square.style.height = `${size}px`;
         square.style.flexBasis= `${size}px`;
         square.style.boxSizing = "border-box";
         square.classList.add("square");
-        square.addEventListener("mouseover", function(){
+        function randColor(){
+            square.style.backgroundColor = `rgb(${getRandomRGB()},${getRandomRGB()},${getRandomRGB()})`;
+        }
+        function setColor(){
+            square.addEventListener("mouseover",function (){
+                square.style.backgroundColor = "rgb(0,0,0)";
+            })
+        }
 
-
+        function randomColor(){
+            square.addEventListener("mouseover",function (){
                 square.style.backgroundColor = `rgb(${getRandomRGB()},${getRandomRGB()},${getRandomRGB()})`;
+            })
+        }
 
 
-        })
+
+        square.addEventListener("mouseover",randColor)
+
         function makeClear(){
             square.style.backgroundColor = "rgb(18, 37, 57)";
         }
 
+
         clear.addEventListener("click", makeClear);
+        set.addEventListener("click", setColor);
+        random.addEventListener("click",randomColor)
+
 
 
         container.appendChild(square);
@@ -71,12 +90,6 @@ function change_size(){
     }
 
 }
-
-
-
-
-
-
 
 
 sizeButton.addEventListener("click",change_size);
